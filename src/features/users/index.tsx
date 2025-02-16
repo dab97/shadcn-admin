@@ -10,7 +10,7 @@ import { UsersTable } from './components/users-table'
 import UsersProvider from './context/users-context'
 import { userListSchema } from './data/schema'
 import { users } from './data/users'
-import { abiturients } from './data/abitur'
+// import { abiturients } from './data/abitur'
 
 export default function Users() {
   // Parse user list

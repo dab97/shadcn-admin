@@ -25,9 +25,9 @@ export default function GeneralError({
         {!minimal && (
           <div className='mt-6 flex gap-4'>
             <Button variant='outline' onClick={() => history.go(-1)}>
-              Go Back
+              Назад
             </Button>
-            <Button onClick={() => navigate({ to: '/' })}>Back to Home</Button>
+            <Button onClick={() => navigate({ to: '/' })}>На Главную</Button>
           </div>
         )}
       </div>

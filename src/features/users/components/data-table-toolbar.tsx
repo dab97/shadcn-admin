@@ -19,7 +19,7 @@ export function DataTableToolbar<TData>({
     <div className='flex items-center justify-between'>
       <div className='flex flex-1 flex-col-reverse items-start gap-y-2 sm:flex-row sm:items-center sm:space-x-2'>
         <Input
-          placeholder='Filter users...'
+          placeholder='Фильтр пользователей...'
           value={
             (table.getColumn('username')?.getFilterValue() as string) ?? ''
           }
@@ -32,19 +32,21 @@ export function DataTableToolbar<TData>({
           {table.getColumn('status') && (
             <DataTableFacetedFilter
               column={table.getColumn('status')}
-              title='Status'
+              title='Курсы'
               options={[
-                { label: 'Active', value: 'active' },
-                { label: 'Inactive', value: 'inactive' },
-                { label: 'Invited', value: 'invited' },
-                { label: 'Suspended', value: 'suspended' },
+                { label: 'Русский язык', value: 'Русский язык' },
+                { label: 'Обществознание', value: 'Обществознание' },
+                { label: 'Биология', value: 'Биология' },
+                { label: 'Математика', value: 'Математика' },
+                { label: 'История', value: 'История' },
+                { label: 'Ин. язык', value: 'Иностранный язык' },
               ]}
             />
           )}
           {table.getColumn('role') && (
             <DataTableFacetedFilter
               column={table.getColumn('role')}
-              title='Role'
+              title='Роль'
               options={userTypes.map((t) => ({ ...t }))}
             />
           )}
@@ -55,7 +57,7 @@ export function DataTableToolbar<TData>({
             onClick={() => table.resetColumnFilters()}
             className='h-8 px-2 lg:px-3'
           >
-            Reset
+            Сброс
             <Cross2Icon className='ml-2 h-4 w-4' />
           </Button>
         )}
