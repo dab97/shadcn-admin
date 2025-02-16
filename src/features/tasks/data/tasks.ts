@@ -1,14 +1,13 @@
 export const tasks = [
   {
-    id: 'TASK-8782',
-    title:
-      "You can't compress the program without quantifying the open-source SSD pixel!",
-    status: 'in progress',
+    id: '1',
+    title: 'Щеблякова Дарья Дмитриевна',
+    status: 'Русский язык, Обществознание, Биология',
     label: 'documentation',
     priority: 'medium',
   },
   {
-    id: 'TASK-7878',
+    id: '2',
     title:
       'Try to calculate the EXE feed, maybe it will index the multi-byte pixel!',
     status: 'backlog',
@@ -16,14 +15,14 @@ export const tasks = [
     priority: 'medium',
   },
   {
-    id: 'TASK-7839',
+    id: '3',
     title: 'We need to bypass the neural TCP card!',
     status: 'todo',
     label: 'bug',
     priority: 'high',
   },
   {
-    id: 'TASK-5562',
+    id: '4',
     title:
       'The SAS interface is down, bypass the open-source pixel so we can back up the PNG bandwidth!',
     status: 'backlog',
@@ -31,7 +30,7 @@ export const tasks = [
     priority: 'medium',
   },
   {
-    id: 'TASK-8686',
+    id: '5',
     title:
       "I'll parse the wireless SSL protocol, that should driver the API panel!",
     status: 'canceled',
@@ -39,7 +38,7 @@ export const tasks = [
     priority: 'medium',
   },
   {
-    id: 'TASK-1280',
+    id: '6',
     title:
       'Use the digital TLS panel, then you can transmit the haptic system!',
     status: 'done',
@@ -47,7 +46,7 @@ export const tasks = [
     priority: 'high',
   },
   {
-    id: 'TASK-7262',
+    id: '7',
     title:
       'The UTF8 application is down, parse the neural bandwidth so we can back up the PNG firewall!',
     status: 'done',
@@ -55,7 +54,7 @@ export const tasks = [
     priority: 'high',
   },
   {
-    id: 'TASK-1138',
+    id: '8',
     title:
       "Generating the driver won't do anything, we need to quantify the 1080p SMTP bandwidth!",
     status: 'in progress',
@@ -63,14 +62,14 @@ export const tasks = [
     priority: 'medium',
   },
   {
-    id: 'TASK-7184',
+    id: '9',
     title: 'We need to program the back-end THX pixel!',
     status: 'todo',
     label: 'feature',
     priority: 'low',
   },
   {
-    id: 'TASK-5160',
+    id: '10',
     title:
       "Calculating the bus won't do anything, we need to navigate the back-end JSON protocol!",
     status: 'in progress',
@@ -78,7 +77,7 @@ export const tasks = [
     priority: 'high',
   },
   {
-    id: 'TASK-5618',
+    id: '11',
     title:
       "Generating the driver won't do anything, we need to index the online SSL application!",
     status: 'done',
@@ -86,7 +85,7 @@ export const tasks = [
     priority: 'medium',
   },
   {
-    id: 'TASK-6699',
+    id: '12',
     title:
       "I'll transmit the wireless JBOD capacitor, that should hard drive the SSD feed!",
     status: 'backlog',
@@ -94,14 +93,14 @@ export const tasks = [
     priority: 'medium',
   },
   {
-    id: 'TASK-2858',
+    id: '13',
     title: 'We need to override the online UDP bus!',
     status: 'backlog',
     label: 'bug',
     priority: 'medium',
   },
   {
-    id: 'TASK-9864',
+    id: '14',
     title:
       "I'll reboot the 1080p FTP panel, that should matrix the HEX hard drive!",
     status: 'done',
@@ -109,14 +108,14 @@ export const tasks = [
     priority: 'high',
   },
   {
-    id: 'TASK-8404',
+    id: '15',
     title: 'We need to generate the virtual HEX alarm!',
     status: 'in progress',
     label: 'bug',
     priority: 'low',
   },
   {
-    id: 'TASK-5365',
+    id: '16',
     title:
       "Backing up the pixel won't do anything, we need to transmit the primary IB array!",
     status: 'in progress',
@@ -124,7 +123,7 @@ export const tasks = [
     priority: 'low',
   },
   {
-    id: 'TASK-1780',
+    id: '17',
     title:
       'The CSS feed is down, index the bluetooth transmitter so we can compress the CLI protocol!',
     status: 'todo',
@@ -132,7 +131,7 @@ export const tasks = [
     priority: 'high',
   },
   {
-    id: 'TASK-6938',
+    id: '18',
     title:
       'Use the redundant SCSI application, then you can hack the optical alarm!',
     status: 'todo',
@@ -140,14 +139,14 @@ export const tasks = [
     priority: 'high',
   },
   {
-    id: 'TASK-9885',
+    id: '19',
     title: 'We need to compress the auxiliary VGA driver!',
     status: 'backlog',
     label: 'bug',
     priority: 'high',
   },
   {
-    id: 'TASK-3216',
+    id: '20',
     title:
       "Transmitting the transmitter won't do anything, we need to compress the virtual HDD sensor!",
     status: 'backlog',

@@ -2,51 +2,51 @@ import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 
 const data = [
   {
-    name: 'Jan',
+    name: 'Янв',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Feb',
+    name: 'Фер',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Mar',
+    name: 'Март',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Apr',
+    name: 'Апр',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'May',
+    name: 'Май',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Jun',
+    name: 'Июнь',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Jul',
+    name: 'Июль',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Aug',
+    name: 'Авг',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Sep',
+    name: 'Сен',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Oct',
+    name: 'Окт',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Nov',
+    name: 'Ноя',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
   {
-    name: 'Dec',
+    name: 'Дек',
     total: Math.floor(Math.random() * 5000) + 1000,
   },
 ]

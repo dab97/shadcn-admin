@@ -10,6 +10,7 @@ import { UsersTable } from './components/users-table'
 import UsersProvider from './context/users-context'
 import { userListSchema } from './data/schema'
 import { users } from './data/users'
+import { abiturients } from './data/abitur'
 
 export default function Users() {
   // Parse user list
@@ -28,7 +29,7 @@ export default function Users() {
       <Main>
         <div className='mb-2 flex flex-wrap items-center justify-between space-y-2'>
           <div>
-            <h2 className='text-2xl font-bold tracking-tight'>User List</h2>
+            <h2 className='text-2xl font-bold tracking-tight'>Список заявок</h2>
             <p className='text-muted-foreground'>
               Manage your users and their roles here.
             </p>
