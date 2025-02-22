@@ -61,11 +61,11 @@ export const columns: ColumnDef<User>[] = [
     ),
   },
   {
-    accessorKey: 'phoneNumber',
+    accessorKey: 'phone',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title='Phone Number' />
     ),
-    cell: ({ row }) => <div>{row.getValue('phoneNumber')}</div>,
+    cell: ({ row }) => <div>{row.getValue('phone')}</div>,
     enableSorting: false,
   },
   {

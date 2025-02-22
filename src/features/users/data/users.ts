@@ -6,7 +6,7 @@
 //     id: faker.string.uuid(),
 //     name,
 //     email: faker.internet.email({ name }).toLocaleLowerCase(),
-//     phoneNumber: faker.phone.number({ style: 'international' }),
+//     phone: faker.phone.number({ style: 'international' }),
 //     status: faker.helpers.arrayElement([
 //       'Русский язык',
 //       'Обществознание',
@@ -43,7 +43,7 @@
 //     id: abitur.id,    
 //     name: abitur.name?.trim() || 'Неизвестный',
 //     email: abitur.email?.toLowerCase() || '',
-//     phoneNumber: abitur.phone({ style: 'international' }),
+//     phone: abitur.phone({ style: 'international' }),
 //     status: abitur.courses.split(', ')[0] || 'Не указано',
 //     // role: 'student',
 //     createdAt: parseDate(abitur.time)
@@ -87,7 +87,7 @@ export const users = abiturients.map((abitur) => {
     id: abitur.id,
     name: abitur.name,
     email: abitur.email.toLowerCase(),
-    phoneNumber: abitur.phone,
+    phone: abitur.phone,
     status: statuses.length > 0 ? statuses : ['Не указано'], // ✅ Массив
     role: 'студент',
     createdAt: parseDate(abitur.time)
