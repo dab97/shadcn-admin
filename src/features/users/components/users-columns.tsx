@@ -40,14 +40,13 @@ export const columns: ColumnDef<User>[] = [
     enableHiding: false,
   },
   {
-    id: 'fullName',
+    id: 'name',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title='Name' />
     ),
     cell: ({ row }) => {
       const { name } = row.original
-      const fullName = `${name}`
-      return <LongText className='max-w-96'>{fullName}</LongText>
+      return <LongText className='max-w-96'>{name}</LongText>
     },
     meta: { className: 'w-96' },
   },
@@ -75,17 +74,27 @@ export const columns: ColumnDef<User>[] = [
     ),
     cell: ({ row }) => {
       const { status } = row.original
-      const badgeColor = callTypes.get(status)
       return (
-        <div className='flex space-x-2'>
-          <Badge variant='outline' className={cn('capitalize', badgeColor)}>
-            {row.getValue('status')}
-          </Badge>
+        <div className='flex flex-wrap gap-1'>
+          {status.map((s) => {
+            const badgeColor = callTypes.get(s)
+            return (
+              <Badge 
+                key={s}
+                variant='outline' 
+                className={cn('capitalize', badgeColor)}
+              >
+                {s}
+              </Badge>
+            )
+          })}
         </div>
       )
     },
     filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id))
+      // Фильтрация по любому из выбранных статусов
+      const rowStatuses: string[] = row.getValue(id)
+      return rowStatuses.some(status => value.includes(status))
     },
     enableHiding: false,
     enableSorting: false,

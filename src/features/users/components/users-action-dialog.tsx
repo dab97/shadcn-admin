@@ -22,11 +22,17 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import MultipleSelector, { type Option } from '@/components/ui/multiselect'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { PasswordInput } from '@/components/password-input'
 import { SelectDropdown } from '@/components/select-dropdown'
 import { userTypes, courseTypes } from '../data/data'
 import { User } from '../data/schema'
+
+const courseOptions: Option[] = courseTypes.map((course) => ({
+  value: course.value,
+  label: course.label,
+}))
 
 const formSchema = z
   .object({
@@ -36,7 +42,9 @@ const formSchema = z
       .string()
       .min(1, { message: 'Email is required.' })
       .email({ message: 'Email is invalid.' }),
-    status: z.string().min(1, { message: 'Status is required.' }),
+    status: z
+      .array(z.string())
+      .min(1, { message: 'Выберите хотя бы один предмет' }),
     role: z.string().min(1, { message: 'Role is required.' }),
     password: z.string().transform((pwd) => pwd.trim()),
     confirmPassword: z.string().transform((pwd) => pwd.trim()),
@@ -108,8 +116,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
           name: '',
           phone: '',
           email: '',
-          status: '',
-          role: '',
+          status: [],
           password: '',
           confirmPassword: '',
           isEdit,
@@ -213,24 +220,44 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
               <FormField
                 control={form.control}
                 name='status'
-                render={({ field }) => (
-                  <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
-                    <FormLabel className='col-span-2 text-right'>
-                      Статус
-                    </FormLabel>
-                    <SelectDropdown
-                      defaultValue={field.value}
-                      onValueChange={field.onChange}
-                      placeholder='Select a role'
-                      className='col-span-4'
-                      items={courseTypes.map(({ label, value }) => ({
-                        label,
-                        value,
-                      }))}
-                    />
-                    <FormMessage className='col-span-4 col-start-3' />
-                  </FormItem>
-                )}
+                render={({ field }) => {
+                  const currentValues = field.value.map((value) => {
+                    const found = courseOptions.find(
+                      (opt) => opt.value === value
+                    )
+                    return found || { value, label: value }
+                  })
+
+                  return (
+                    <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
+                      <FormLabel className='col-span-2 text-right'>
+                        Статус
+                      </FormLabel>
+                      <FormControl>
+                        <MultipleSelector
+                          value={currentValues}
+                          onChange={(options) =>
+                            field.onChange(options.map((opt) => opt.value))
+                          }
+                          defaultOptions={courseOptions}
+                          placeholder='Выберите дисциплины'
+                          className='col-span-4'
+                          badgeClassName='bg-accent text-accent-foreground'
+                          hidePlaceholderWhenSelected
+                          commandProps={{
+                            className: 'min-w-[300px]',
+                          }}
+                          emptyIndicator={
+                            <p className='text-center text-sm'>
+                              Ничего не найдено
+                            </p>
+                          }
+                        />
+                      </FormControl>
+                      <FormMessage className='col-span-4 col-start-3' />
+                    </FormItem>
+                  )
+                }}
               />
               <FormField
                 control={form.control}
