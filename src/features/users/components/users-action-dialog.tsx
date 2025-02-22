@@ -30,7 +30,7 @@ import { User } from '../data/schema'
 
 const formSchema = z
   .object({
-    firstName: z.string().min(1, { message: 'First Name is required.' }),
+    name: z.string().min(1, { message: 'First Name is required.' }),
     phoneNumber: z.string().min(1, { message: 'Phone number is required.' }),
     email: z
       .string()
@@ -105,7 +105,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
           isEdit,
         }
       : {
-          firstName: '',
+          name: '',
           email: '',
           status: '',
           role: '',
@@ -156,7 +156,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
             >
               <FormField
                 control={form.control}
-                name='firstName'
+                name='name'
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
                     <FormLabel className='col-span-2 text-right'>ФИО</FormLabel>

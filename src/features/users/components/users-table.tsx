@@ -93,7 +93,7 @@ export function UsersTable({ columns, data }: DataTableProps) {
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
+          <TableBody className='text-xs md:text-sm'>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow

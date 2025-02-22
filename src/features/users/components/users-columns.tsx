@@ -45,11 +45,11 @@ export const columns: ColumnDef<User>[] = [
       <DataTableColumnHeader column={column} title='Name' />
     ),
     cell: ({ row }) => {
-      const { firstName } = row.original
-      const fullName = `${firstName}`
-      return <LongText className='max-w-36'>{fullName}</LongText>
+      const { name } = row.original
+      const fullName = `${name}`
+      return <LongText className='max-w-96'>{fullName}</LongText>
     },
-    meta: { className: 'w-36' },
+    meta: { className: 'w-96' },
   },
   {
     accessorKey: 'email',
