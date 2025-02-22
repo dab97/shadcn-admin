@@ -25,7 +25,7 @@ import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { PasswordInput } from '@/components/password-input'
 import { SelectDropdown } from '@/components/select-dropdown'
-import { userTypes } from '../data/data'
+import { userTypes, courseTypes } from '../data/data'
 import { User } from '../data/schema'
 
 const formSchema = z
@@ -36,9 +36,9 @@ const formSchema = z
       .string()
       .min(1, { message: 'Email is required.' })
       .email({ message: 'Email is invalid.' }),
-    password: z.string().transform((pwd) => pwd.trim()),
     status: z.string().min(1, { message: 'Status is required.' }),
     role: z.string().min(1, { message: 'Role is required.' }),
+    password: z.string().transform((pwd) => pwd.trim()),
     confirmPassword: z.string().transform((pwd) => pwd.trim()),
     isEdit: z.boolean(),
   })
@@ -106,10 +106,10 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
         }
       : {
           name: '',
+          phone: '',
           email: '',
           status: '',
           role: '',
-          phone: '',
           password: '',
           confirmPassword: '',
           isEdit,
@@ -174,15 +174,15 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
               />
               <FormField
                 control={form.control}
-                name='email'
+                name='phone'
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
                     <FormLabel className='col-span-2 text-right'>
-                      Email
+                      Номер телефона
                     </FormLabel>
                     <FormControl>
                       <Input
-                        placeholder='john.doe@gmail.com'
+                        placeholder='+123456789'
                         className='col-span-4'
                         {...field}
                       />
@@ -193,15 +193,15 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
               />
               <FormField
                 control={form.control}
-                name='phone'
+                name='email'
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
                     <FormLabel className='col-span-2 text-right'>
-                      Номер телефона
+                      Email
                     </FormLabel>
                     <FormControl>
                       <Input
-                        placeholder='+123456789'
+                        placeholder='john.doe@gmail.com'
                         className='col-span-4'
                         {...field}
                       />
@@ -223,7 +223,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                       onValueChange={field.onChange}
                       placeholder='Select a role'
                       className='col-span-4'
-                      items={userTypes.map(({ label, value }) => ({
+                      items={courseTypes.map(({ label, value }) => ({
                         label,
                         value,
                       }))}

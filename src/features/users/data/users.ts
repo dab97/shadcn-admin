@@ -86,8 +86,8 @@ export const users = abiturients.map((abitur) => {
   return {
     id: abitur.id,
     name: abitur.name,
-    email: abitur.email.toLowerCase(),
     phone: abitur.phone,
+    email: abitur.email.toLowerCase(),
     status: statuses.length > 0 ? statuses : ['Не указано'], // ✅ Массив
     role: 'студент',
     createdAt: parseDate(abitur.time)

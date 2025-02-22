@@ -37,3 +37,36 @@ export const userTypes = [
     icon: IconCash,
   },
 ] as const
+
+export const courseTypes = [
+  {
+    label: 'Русский язык',
+    value: 'Русский язык',
+    icon: IconShield,
+  },
+  {
+    label: 'Обществознание',
+    value: 'Обществознание',
+    icon: IconUserShield,
+  },
+  {
+    label: 'Математика',
+    value: 'Математика',
+    icon: IconUsersGroup,
+  },
+  {
+    label: 'Биология',
+    value: 'Биология',
+    icon: IconCash,
+  },
+  {
+    label: 'История',
+    value: 'История',
+    icon: IconUsersGroup,
+  },
+  {
+    label: 'Иностранный язык',
+    value: 'Иностранный язык',
+    icon: IconCash,
+  },
+] as const
