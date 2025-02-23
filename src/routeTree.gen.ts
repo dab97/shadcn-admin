@@ -17,6 +17,7 @@ import { Route as AuthenticatedRouteImport } from './routes/_authenticated/route
 import { Route as AuthenticatedIndexImport } from './routes/_authenticated/index'
 import { Route as authSignInImport } from './routes/(auth)/sign-in'
 import { Route as authOtpImport } from './routes/(auth)/otp'
+import { Route as authCourseImport } from './routes/(auth)/course'
 import { Route as auth500Import } from './routes/(auth)/500'
 
 // Create Virtual Routes
@@ -45,6 +46,9 @@ const AuthenticatedSettingsIndexLazyImport = createFileRoute(
 )()
 const AuthenticatedHelpCenterIndexLazyImport = createFileRoute(
   '/_authenticated/help-center/',
+)()
+const AuthenticatedCourseIndexLazyImport = createFileRoute(
+  '/_authenticated/course/',
 )()
 const AuthenticatedChatsIndexLazyImport = createFileRoute(
   '/_authenticated/chats/',
@@ -165,6 +169,12 @@ const authOtpRoute = authOtpImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const authCourseRoute = authCourseImport.update({
+  id: '/(auth)/course',
+  path: '/course',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const auth500Route = auth500Import.update({
   id: '/(auth)/500',
   path: '/500',
@@ -207,6 +217,15 @@ const AuthenticatedHelpCenterIndexLazyRoute =
     import('./routes/_authenticated/help-center/index.lazy').then(
       (d) => d.Route,
     ),
+  )
+
+const AuthenticatedCourseIndexLazyRoute =
+  AuthenticatedCourseIndexLazyImport.update({
+    id: '/course/',
+    path: '/course/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any).lazy(() =>
+    import('./routes/_authenticated/course/index.lazy').then((d) => d.Route),
   )
 
 const AuthenticatedChatsIndexLazyRoute =
@@ -288,6 +307,13 @@ declare module '@tanstack/react-router' {
       path: '/500'
       fullPath: '/500'
       preLoaderRoute: typeof auth500Import
+      parentRoute: typeof rootRoute
+    }
+    '/(auth)/course': {
+      id: '/(auth)/course'
+      path: '/course'
+      fullPath: '/course'
+      preLoaderRoute: typeof authCourseImport
       parentRoute: typeof rootRoute
     }
     '/(auth)/otp': {
@@ -416,6 +442,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedChatsIndexLazyImport
       parentRoute: typeof AuthenticatedRouteImport
     }
+    '/_authenticated/course/': {
+      id: '/_authenticated/course/'
+      path: '/course'
+      fullPath: '/course'
+      preLoaderRoute: typeof AuthenticatedCourseIndexLazyImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
     '/_authenticated/help-center/': {
       id: '/_authenticated/help-center/'
       path: '/help-center'
@@ -480,6 +513,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
   AuthenticatedAppsIndexLazyRoute: typeof AuthenticatedAppsIndexLazyRoute
   AuthenticatedChatsIndexLazyRoute: typeof AuthenticatedChatsIndexLazyRoute
+  AuthenticatedCourseIndexLazyRoute: typeof AuthenticatedCourseIndexLazyRoute
   AuthenticatedHelpCenterIndexLazyRoute: typeof AuthenticatedHelpCenterIndexLazyRoute
   AuthenticatedTasksIndexLazyRoute: typeof AuthenticatedTasksIndexLazyRoute
   AuthenticatedUsersIndexLazyRoute: typeof AuthenticatedUsersIndexLazyRoute
@@ -491,6 +525,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,
   AuthenticatedAppsIndexLazyRoute: AuthenticatedAppsIndexLazyRoute,
   AuthenticatedChatsIndexLazyRoute: AuthenticatedChatsIndexLazyRoute,
+  AuthenticatedCourseIndexLazyRoute: AuthenticatedCourseIndexLazyRoute,
   AuthenticatedHelpCenterIndexLazyRoute: AuthenticatedHelpCenterIndexLazyRoute,
   AuthenticatedTasksIndexLazyRoute: AuthenticatedTasksIndexLazyRoute,
   AuthenticatedUsersIndexLazyRoute: AuthenticatedUsersIndexLazyRoute,
@@ -502,6 +537,7 @@ const AuthenticatedRouteRouteWithChildren =
 export interface FileRoutesByFullPath {
   '': typeof AuthenticatedRouteRouteWithChildren
   '/500': typeof errors500LazyRoute
+  '/course': typeof AuthenticatedCourseIndexLazyRoute
   '/otp': typeof authOtpRoute
   '/sign-in': typeof authSignInRoute
   '/settings': typeof AuthenticatedSettingsRouteLazyRouteWithChildren
@@ -527,6 +563,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/500': typeof errors500LazyRoute
+  '/course': typeof AuthenticatedCourseIndexLazyRoute
   '/otp': typeof authOtpRoute
   '/sign-in': typeof authSignInRoute
   '/forgot-password': typeof authForgotPasswordLazyRoute
@@ -553,6 +590,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/(auth)/500': typeof auth500Route
+  '/(auth)/course': typeof authCourseRoute
   '/(auth)/otp': typeof authOtpRoute
   '/(auth)/sign-in': typeof authSignInRoute
   '/_authenticated/settings': typeof AuthenticatedSettingsRouteLazyRouteWithChildren
@@ -571,6 +609,7 @@ export interface FileRoutesById {
   '/_authenticated/settings/notifications': typeof AuthenticatedSettingsNotificationsLazyRoute
   '/_authenticated/apps/': typeof AuthenticatedAppsIndexLazyRoute
   '/_authenticated/chats/': typeof AuthenticatedChatsIndexLazyRoute
+  '/_authenticated/course/': typeof AuthenticatedCourseIndexLazyRoute
   '/_authenticated/help-center/': typeof AuthenticatedHelpCenterIndexLazyRoute
   '/_authenticated/settings/': typeof AuthenticatedSettingsIndexLazyRoute
   '/_authenticated/tasks/': typeof AuthenticatedTasksIndexLazyRoute
@@ -582,6 +621,7 @@ export interface FileRouteTypes {
   fullPaths:
     | ''
     | '/500'
+    | '/course'
     | '/otp'
     | '/sign-in'
     | '/settings'
@@ -606,6 +646,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/500'
+    | '/course'
     | '/otp'
     | '/sign-in'
     | '/forgot-password'
@@ -630,6 +671,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/_authenticated'
     | '/(auth)/500'
+    | '/(auth)/course'
     | '/(auth)/otp'
     | '/(auth)/sign-in'
     | '/_authenticated/settings'
@@ -648,6 +690,7 @@ export interface FileRouteTypes {
     | '/_authenticated/settings/notifications'
     | '/_authenticated/apps/'
     | '/_authenticated/chats/'
+    | '/_authenticated/course/'
     | '/_authenticated/help-center/'
     | '/_authenticated/settings/'
     | '/_authenticated/tasks/'
@@ -658,6 +701,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   auth500Route: typeof auth500Route
+  authCourseRoute: typeof authCourseRoute
   authOtpRoute: typeof authOtpRoute
   authSignInRoute: typeof authSignInRoute
   authForgotPasswordLazyRoute: typeof authForgotPasswordLazyRoute
@@ -673,6 +717,7 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   auth500Route: auth500Route,
+  authCourseRoute: authCourseRoute,
   authOtpRoute: authOtpRoute,
   authSignInRoute: authSignInRoute,
   authForgotPasswordLazyRoute: authForgotPasswordLazyRoute,
@@ -697,6 +742,7 @@ export const routeTree = rootRoute
       "children": [
         "/_authenticated",
         "/(auth)/500",
+        "/(auth)/course",
         "/(auth)/otp",
         "/(auth)/sign-in",
         "/(auth)/forgot-password",
@@ -716,6 +762,7 @@ export const routeTree = rootRoute
         "/_authenticated/",
         "/_authenticated/apps/",
         "/_authenticated/chats/",
+        "/_authenticated/course/",
         "/_authenticated/help-center/",
         "/_authenticated/tasks/",
         "/_authenticated/users/"
@@ -723,6 +770,9 @@ export const routeTree = rootRoute
     },
     "/(auth)/500": {
       "filePath": "(auth)/500.tsx"
+    },
+    "/(auth)/course": {
+      "filePath": "(auth)/course.tsx"
     },
     "/(auth)/otp": {
       "filePath": "(auth)/otp.tsx"
@@ -791,6 +841,10 @@ export const routeTree = rootRoute
     },
     "/_authenticated/chats/": {
       "filePath": "_authenticated/chats/index.lazy.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/course/": {
+      "filePath": "_authenticated/course/index.lazy.tsx",
       "parent": "/_authenticated"
     },
     "/_authenticated/help-center/": {

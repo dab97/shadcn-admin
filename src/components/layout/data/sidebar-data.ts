@@ -18,6 +18,7 @@ import {
   IconUserCog,
   IconUserOff,
   IconUsers,
+  IconListDetails,
 } from '@tabler/icons-react'
 import { AudioWaveform, Command } from 'lucide-react'
 import { type SidebarData } from '../types'
@@ -60,6 +61,11 @@ export const sidebarData: SidebarData = {
           icon: IconUsers,
         },
         {
+          title: 'Course',
+          url: '/course',          
+          icon: IconListDetails,
+        },
+        {
           title: 'Apps',
           url: '/apps',
           icon: IconPackages,
@@ -75,6 +81,11 @@ export const sidebarData: SidebarData = {
     {
       title: 'Pages',
       items: [
+        {
+          title: 'Course',
+          url: '/course',          
+          icon: IconListDetails,
+        },
         {
           title: 'Auth',
           icon: IconLockAccess,
