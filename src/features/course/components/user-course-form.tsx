@@ -105,7 +105,7 @@ export function CourseForm({ className, ...props }: CourseFormProps) {
                 </FormItem>
               )}
             />
-            <Button className='mt-2' disabled={isLoading}>
+            <Button className='mt-12' disabled={isLoading}>
               Отправить
             </Button>
           </div>
@@ -114,3 +114,5 @@ export function CourseForm({ className, ...props }: CourseFormProps) {
     </div>
   )
 }
+
+
