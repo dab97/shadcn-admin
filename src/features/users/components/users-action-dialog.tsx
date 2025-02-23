@@ -165,17 +165,17 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                 control={form.control}
                 name='name'
                 render={({ field }) => (
-                  <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
+                  <FormItem className='grid grid-cols-7 items-center gap-x-4 gap-y-1 space-y-0'>
                     <FormLabel className='col-span-2 text-right'>ФИО</FormLabel>
                     <FormControl>
                       <Input
                         placeholder='John'
-                        className='col-span-4'
+                        className='col-span-5'
                         autoComplete='off'
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage className='col-span-4 col-start-3' />
+                    <FormMessage className='col-span-5 col-start-4' />
                   </FormItem>
                 )}
               />
@@ -183,18 +183,18 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                 control={form.control}
                 name='phone'
                 render={({ field }) => (
-                  <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
+                  <FormItem className='grid grid-cols-7 items-center gap-x-4 gap-y-1 space-y-0'>
                     <FormLabel className='col-span-2 text-right'>
                       Номер телефона
                     </FormLabel>
                     <FormControl>
                       <Input
                         placeholder='+123456789'
-                        className='col-span-4'
+                        className='col-span-5'
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage className='col-span-4 col-start-3' />
+                    <FormMessage className='col-span-5 col-start-4' />
                   </FormItem>
                 )}
               />
@@ -202,18 +202,18 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                 control={form.control}
                 name='email'
                 render={({ field }) => (
-                  <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
+                  <FormItem className='grid grid-cols-7 items-center gap-x-4 gap-y-1 space-y-0'>
                     <FormLabel className='col-span-2 text-right'>
                       Email
                     </FormLabel>
                     <FormControl>
                       <Input
                         placeholder='john.doe@gmail.com'
-                        className='col-span-4'
+                        className='col-span-5'
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage className='col-span-4 col-start-3' />
+                    <FormMessage className='col-span-5 col-start-4' />
                   </FormItem>
                 )}
               />
@@ -229,7 +229,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                   })
 
                   return (
-                    <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
+                    <FormItem className='grid grid-cols-7 items-center gap-x-4 gap-y-1 space-y-0'>
                       <FormLabel className='col-span-2 text-right'>
                         Статус
                       </FormLabel>
@@ -241,7 +241,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                           }
                           defaultOptions={courseOptions}
                           placeholder='Выберите дисциплины'
-                          className='col-span-4'
+                          className='col-span-5'
                           badgeClassName='bg-accent text-accent-foreground'
                           hidePlaceholderWhenSelected
                           commandProps={{
@@ -254,7 +254,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                           }
                         />
                       </FormControl>
-                      <FormMessage className='col-span-4 col-start-3' />
+                      <FormMessage className='col-span-5 col-start-4' />
                     </FormItem>
                   )
                 }}
@@ -263,7 +263,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                 control={form.control}
                 name='role'
                 render={({ field }) => (
-                  <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
+                  <FormItem className='grid grid-cols-7 items-center gap-x-4 gap-y-1 space-y-0'>
                     <FormLabel className='col-span-2 text-right'>
                       Роль
                     </FormLabel>
@@ -271,13 +271,13 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                       defaultValue={field.value}
                       onValueChange={field.onChange}
                       placeholder='Select a role'
-                      className='col-span-4'
+                      className='col-span-5'
                       items={userTypes.map(({ label, value }) => ({
                         label,
                         value,
                       }))}
                     />
-                    <FormMessage className='col-span-4 col-start-3' />
+                    <FormMessage className='col-span-5 col-start-4' />
                   </FormItem>
                 )}
               />
@@ -285,18 +285,18 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                 control={form.control}
                 name='password'
                 render={({ field }) => (
-                  <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
+                  <FormItem className='grid grid-cols-7 items-center gap-x-4 gap-y-1 space-y-0'>
                     <FormLabel className='col-span-2 text-right'>
                       Пароль
                     </FormLabel>
                     <FormControl>
                       <PasswordInput
                         placeholder='e.g., S3cur3P@ssw0rd'
-                        className='col-span-4'
+                        className='col-span-5'
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage className='col-span-4 col-start-3' />
+                    <FormMessage className='col-span-5 col-start-4' />
                   </FormItem>
                 )}
               />
@@ -304,7 +304,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                 control={form.control}
                 name='confirmPassword'
                 render={({ field }) => (
-                  <FormItem className='grid grid-cols-6 items-center gap-x-4 gap-y-1 space-y-0'>
+                  <FormItem className='grid grid-cols-7 items-center gap-x-4 gap-y-1 space-y-0'>
                     <FormLabel className='col-span-2 text-right'>
                       Потвердить пароль
                     </FormLabel>
@@ -312,11 +312,11 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
                       <PasswordInput
                         disabled={!isPasswordTouched}
                         placeholder='e.g., S3cur3P@ssw0rd'
-                        className='col-span-4'
+                        className='col-span-5'
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage className='col-span-4 col-start-3' />
+                    <FormMessage className='col-span-5 col-start-4' />
                   </FormItem>
                 )}
               />
