@@ -5,7 +5,8 @@ export const abiturients = [
     name: "Щеблякова Дарья Дмитриевна",
     phone: "375(29)993-81-54",
     email: "Dimaandlena@mail.ru",
-    courses: "Русский язык, Обществознание, Биология"
+    courses: "Русский язык, Обществознание, Биология",
+    role: "admin"
   },
   {
     id: "2",
@@ -13,7 +14,8 @@ export const abiturients = [
     name: "Славинский Дмитрий Олегович",
     phone: "375293521822",
     email: "slavinskaya-a@mail.ru",
-    courses: "Русский язык, Обществознание, Биология"
+    courses: "Русский язык, Обществознание, Биология",
+    role: "admin"
   },
   {
     id: "3",
@@ -21,7 +23,8 @@ export const abiturients = [
     name: "Шабулдаева Надежда Александровна",
     phone: "375292310437",
     email: "nn.odwwio@gmail.com",
-    courses: "Русский язык, Биология"
+    courses: "Русский язык, Биология",
+    role: "admin"
   },
   {
     id: "4",

@@ -32,8 +32,8 @@ export const userTypes = [
     icon: IconUsersGroup,
   },
   {
-    label: 'Cashier',
-    value: 'cashier',
+    label: 'Студент',
+    value: 'студент',
     icon: IconCash,
   },
 ] as const

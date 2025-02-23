@@ -65,7 +65,7 @@ export const columns: ColumnDef<User>[] = [
       <DataTableColumnHeader column={column} title='Phone Number' />
     ),
     cell: ({ row }) => <div>{row.getValue('phone')}</div>,
-    enableSorting: false,
+    enableSorting: true,
   },
   {
     accessorKey: 'status',
@@ -92,12 +92,11 @@ export const columns: ColumnDef<User>[] = [
       )
     },
     filterFn: (row, id, value) => {
-      // Фильтрация по любому из выбранных статусов
       const rowStatuses: string[] = row.getValue(id)
       return rowStatuses.some(status => value.includes(status))
     },
-    enableHiding: false,
-    enableSorting: false,
+    enableHiding: true,
+    enableSorting: true,
   },
   {
     accessorKey: 'role',
@@ -117,15 +116,15 @@ export const columns: ColumnDef<User>[] = [
           {userType.icon && (
             <userType.icon size={16} className='text-muted-foreground' />
           )}
-          <span className='text-sm capitalize'>{row.getValue('role')}</span>
+          <span className='text-xs capitalize'>{row.getValue('role')}</span>
         </div>
       )
     },
     filterFn: (row, id, value) => {
       return value.includes(row.getValue(id))
     },
-    enableSorting: false,
-    enableHiding: false,
+    enableSorting: true,
+    enableHiding: true,
   },
   {
     id: 'actions',

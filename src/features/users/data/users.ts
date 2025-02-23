@@ -71,7 +71,6 @@ export const users = abiturients.map((abitur) => {
     }
   }
 
-  // Разбиваем курсы на массив и фильтруем некорректные значения
   const statuses = abitur.courses
     .split(', ')
     .filter(course => [
@@ -89,7 +88,7 @@ export const users = abiturients.map((abitur) => {
     phone: abitur.phone,
     email: abitur.email.toLowerCase(),
     status: statuses.length > 0 ? statuses : ['Не указано'], // ✅ Массив
-    role: 'студент',
+    role:  abitur.role || 'студент'.toLowerCase(),
     createdAt: parseDate(abitur.time)
   };
 })
