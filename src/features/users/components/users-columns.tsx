@@ -40,6 +40,14 @@ export const columns: ColumnDef<User>[] = [
     enableHiding: false,
   },
   {
+    accessorKey: 'time',
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title='Time' />
+    ),
+    cell: ({ row }) => <div>{row.getValue('time')}</div>,
+    enableSorting: true,
+  },
+  {
     accessorKey: 'name',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title='Name' />
