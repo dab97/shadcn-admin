@@ -20,7 +20,7 @@ import {
   IconUsers,
   IconListDetails,
 } from '@tabler/icons-react'
-import { AudioWaveform, Command } from 'lucide-react'
+import { Command } from 'lucide-react'
 import { type SidebarData } from '../types'
 
 export const sidebarData: SidebarData = {
@@ -34,11 +34,6 @@ export const sidebarData: SidebarData = {
       name: 'Shadcn Admin',
       logo: Command,
       plan: 'Vite + ShadcnUI',
-    },
-    {
-      name: 'Acme Corp.',
-      logo: AudioWaveform,
-      plan: 'Startup',
     },
   ],
   navGroups: [
